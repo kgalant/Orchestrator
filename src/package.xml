@@ -20,10 +20,12 @@
     <types>
         <members>Orchestrator_Configuration__mdt</members>
         <members>Orchestrator_Execution_Settings__c</members>
+        <members>Orchestrator_Sample_Job_Setting__mdt</members>
         <name>CustomObject</name>
     </types>
     <types>
         <members>Orchestrator_Configuration__mdt-Orchestrator Configuration Layout</members>
+        <members>Orchestrator_Sample_Job_Setting__mdt-Orchestrator Sample Job Setting Layout</members>
         <name>Layout</name>
     </types>
     <version>36.0</version>

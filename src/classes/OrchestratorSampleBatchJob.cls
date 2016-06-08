@@ -2,6 +2,13 @@ global without sharing class OrchestratorSampleBatchJob extends OrchestratorBatc
 
 	global override void execute(Database.BatchableContext BC, List<sObject> scope) {
 		log('In execute...');
+
+		// listing parameters
+
+		for (String s : myParametersMap.keyset()) {
+			log('Parameter provided: ' + s + ' value: ' + getParameter(s));
+		}
+
 		for (SObject s : scope) {
 			Account a = (Account)s;
 			log('Account id: ' + a.id + ' Name: ' + a.name);

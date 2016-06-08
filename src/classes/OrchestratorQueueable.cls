@@ -28,7 +28,7 @@ global class OrchestratorQueueable implements Queueable {
 
         	if (jobSetting.Current_job__c == null && jobSetting.Job_queue__c == null) {
         		// run housekeeping job to finish up
-
+        		log('No more jobs scheduled. Housekeeping time...');
         		Type setupClass = Type.forName(OrchestratorConstants.HOUSEKEEPING_JOBNAME);
 
         		OrchestratorJobParent myJob = (OrchestratorJobParent)setupClass.newInstance();
@@ -74,7 +74,8 @@ global class OrchestratorQueueable implements Queueable {
 
         } else {
         	// can't find a custom setting for this job - that means we have to run the TaskSetup job
-
+        	log('Starting job with config: ' + myConfigurationId);
+        	log('TaskSetup will run.');
         	Type setupClass = Type.forName(OrchestratorConstants.TASKSETUP_JOBNAME);
 
         	OrchestratorJobParent myJob = (OrchestratorJobParent)setupClass.newInstance();

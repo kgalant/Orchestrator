@@ -15,10 +15,12 @@ global without sharing class OrchestratorTaskSetup extends OrchestratorQueueable
 	}
 
 	global override boolean execute() {
+		log('Executing TaskSetup');
+
 		// look for the Custom Metadata item
 
-		Orchestrator_Configuration__mdt myConfigMDT = [select QualifiedApiName, Jobs__c from Orchestrator_Configuration__mdt WHERE DeveloperName=:myConfigId][0];
-		log('Found configuration MDT: ' + myConfigMDT);
+		// Orchestrator_Configuration__mdt myConfigMDT = [select QualifiedApiName, Jobs__c from Orchestrator_Configuration__mdt WHERE DeveloperName=:myConfigId][0];
+		log('Parameter map: ' + myParametersMap);
 
 		// now create a custom setting for this execution
 
@@ -28,9 +30,11 @@ global without sharing class OrchestratorTaskSetup extends OrchestratorQueueable
 
 		// get the jobs from the custom metadata, move over to custom setting
 
-		newSetting.Job_queue__c = myConfigMDT.Jobs__c;
+		newSetting.Job_queue__c = getParameter('Jobs__c');
 
 		insert newSetting;
+
+		log(LoggingLevel.FINE, 'Custom setting created: ' + newSetting);
 
 		return true; // we're done with the task setup so return true
 	}
