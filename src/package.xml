@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>OrchestratorBatchParent</members>
+        <members>OrchestratorConstants</members>
+        <members>OrchestratorException</members>
+        <members>OrchestratorHousekeeping</members>
+        <members>OrchestratorJobParent</members>
+        <members>OrchestratorQueueable</members>
+        <members>OrchestratorQueueableParent</members>
+        <members>OrchestratorSampleBatchJob</members>
+        <members>OrchestratorSchedulable</members>
+        <members>OrchestratorTaskSetup</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>Orchestrator_Configuration.Sample_setting</members>
+        <name>CustomMetadata</name>
+    </types>
+    <types>
+        <members>Orchestrator_Configuration__mdt</members>
+        <members>Orchestrator_Execution_Settings__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Orchestrator_Configuration__mdt-Orchestrator Configuration Layout</members>
+        <name>Layout</name>
+    </types>
+    <version>36.0</version>
+</Package>
